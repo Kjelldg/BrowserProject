@@ -1,22 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum = "1"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv_text"
-        android:textSize="30dp"
-        android:text="Dentium Browser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:weightSum="1"
+        android:layout_weight="0.10"
+        android:id="@+id/ll_urlgo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_go"
-        android:text="GO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/editText_Url"
+            android:inputType="textNoSuggestions"
+            android:weightSum="0.90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.95"/>
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:id="@+id/go_Button"
+            android:weightSum="0.10"
+            android:text="Go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"/>
+
+    </LinearLayout>
+
+
+    <WebView
+        android:id="@+id/webView_Browser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.80">
+
+    </WebView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_Buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <Button
+            android:id="@+id/forward_Button"
+            android:text="Forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+        <Button
+            android:id="@+id/backward_Button"
+            android:text="Backward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+        <Button
+            android:id="@+id/refresh_Button"
+            android:text="Refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+        <Button
+            android:id="@+id/clear_Button"
+            android:text="Clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
