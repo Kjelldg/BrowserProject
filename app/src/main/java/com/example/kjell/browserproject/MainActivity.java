@@ -45,11 +45,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // webView_Browser.setWebViewClient(new WebViewClient());
-
-        //String url_String = "http://www.computersweden.idg.se";
-
-        //webView_Browser.loadUrl(url_String);
     }
 
 
