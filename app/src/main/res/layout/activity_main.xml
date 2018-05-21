@@ -14,10 +14,13 @@
         android:id="@+id/ll_urlgo"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#f4f4f4"
+        >
 
         <EditText
             android:id="@+id/editText_Url"
+            android:background="#f4f4f4"
             android:inputType="textNoSuggestions"
             android:weightSum="0.90"
             android:layout_width="wrap_content"
