@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     WebView webView_Browser;
     EditText editText_Url;
     Button forward_Button, backward_Button, refresh_Button, clear_Button, go_Button;
+    String defaultURLTesting = "http://newscientist.com";
 
 
     @Override
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         webView_Browser = (WebView) findViewById(R.id.webView_Browser);
 
+        // For opening new websites in the app instead of another browser on the phone.
         webView_Browser.setWebViewClient(new WebViewClient());
 
         editText_Url = (EditText) findViewById(R.id.editText_Url);
@@ -35,12 +37,17 @@ public class MainActivity extends AppCompatActivity {
         refresh_Button = (Button) findViewById(R.id.refresh_Button);
         clear_Button = (Button) findViewById(R.id.clear_Button);
 
+        webView_Browser.loadUrl(defaultURLTesting);
+
+        // Code for the "Go" button, making it launch the user-typed editText URL
         go_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String editTextValue = editText_Url.getText().toString();
-                String url_String = editTextValue;
-                webView_Browser.loadUrl(url_String);
+                if(!editTextValue.startsWith("http://") && !editTextValue.startsWith("https://")) {
+                    editTextValue = "http://" + editTextValue;
+                }
+                webView_Browser.loadUrl(editTextValue);
             }
         });
 
